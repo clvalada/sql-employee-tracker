@@ -61,11 +61,12 @@ MIT
 
 I used the following documentation complete this project:
 
-Express.js https://expressjs.com/
-
 Server.js https://serverjs.io/documentation/
 
 Inquirer.js https://www.npmjs.com/package/inquirer
+
+MySQL2 https://www.npmjs.com/package/mysql2
+
 
 ## Contributing
 
