@@ -1,19 +1,70 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql');
 
+// Create a MySQL connection
+const connection = mysql.createConnection({
+  host: 'your_database_host',
+  user: 'your_database_user',
+  password: 'your_database_password',
+  database: 'your_database_name',
+});
+
+// Function to start the application
+function employeeTracker() {
+  inquirer
+    .prompt([
+      {
+        type: 'list',
+        message: 'How can I help you?',
+        name: 'action',
+        choices: [
+          'View all departments',
+          'View all roles',
+          'View all employees',
+          'Add a department',
+          'Add a role',
+          'Add an employee',
+          'Update an employee role',
+          'Exit the application',
+        ],
+      },
+    ])
+    .then(function (response) {
+      const action = response.action;
+      // Handle different user choices based on 'action'
+      switch (action) {
+        case 'View all departments':
+          viewDepartments();
+          break;
+        case 'View all roles':
+          viewRoles();
+          break;
+        case 'View all employees':
+          viewEmployees();
+          break;
+        case 'Add a department':
+          addDepartment();
+          break;
+        case 'Add a role':
+          addRole();
+          break;
+        case 'Add an employee':
+          addEmployee();
+          break;
+        case 'Update an employee role':
+          updateEmployeeRole();
+          break;
+        case 'Exit the application':
+          exitApplication();
+          break;
+        default:
+          console.log('Invalid choice');
+          break;
+      }
+    });
+}
+
 /*
-Initialize the application
-
-Display a main menu with the following options:
-1. View all departments
-2. View all roles
-3. View all employees
-4. Add a department
-5. Add a role
-6. Add an employee
-7. Update an employee role
-8. Exit the application
-
 While the user has not chosen to exit:
   Get the user's choice from the main menu
 
