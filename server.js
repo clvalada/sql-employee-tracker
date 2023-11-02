@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const inquirer = require('inquirer');
 const mysql = require('mysql');
+const fs = require('fs');
 
 const dbHost = process.env.DB_HOST;
 const dbUser = process.env.DB_USER;
@@ -10,10 +11,27 @@ const dbDatabase = process.env.DB_DATABASE;
 
 // Create a MySQL connection using .env
 const connection = mysql.createConnection({
-  host: 'dbHost',
-  user: 'dbUser',
-  password: 'dbPassword',
-  database: 'dbDatabase',
+  host: dbHost,
+  user: dbUser,
+  password: dbPassword,
+  database: dbDatabase,
+});
+
+// Read and execute the schema.sql file
+fs.readFile('schema.sql', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading schema.sql:', err);
+    return;
+  }
+
+  // Execute the SQL commands in the file
+  connection.query(data, (err, results) => {
+    if (err) {
+      console.error('Error executing schema.sql:', err);
+    } else {
+      console.log('schema.sql executed successfully.');
+    }
+  });
 });
 
 // Function to start the application
