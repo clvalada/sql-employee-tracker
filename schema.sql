@@ -1,3 +1,9 @@
+-- Create the employees database
+DROP DATABASE IF EXISTS employees_db;
+CREATE DATABASE employees_db;
+
+USE employees_db;
+
 -- Create the department table
 CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,

@@ -1,8 +1,12 @@
 require('dotenv').config();
-
+const express = require('express');
 const inquirer = require('inquirer');
 const mysql = require('mysql');
 const fs = require('fs');
+
+const PORT = process.env.PORT || 3006;
+const app = express();
+
 
 const dbHost = process.env.DB_HOST;
 const dbUser = process.env.DB_USER;
