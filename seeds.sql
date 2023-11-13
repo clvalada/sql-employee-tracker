@@ -19,4 +19,4 @@ INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
   ('Peter', 'Parker', 4, 1),  -- Peter Parker is a Sales Representative managed by Tony Stark
   ('Natasha', 'Romanoff', 3, NULL), -- Natasha Romanoff is a Marketing Specialist with no manager
   ('Hank', 'Pym', 2, NULL), -- Hank Pym is an Engineering Manager with no manager
-  ('Scott', 'Lang', 4, 1,); -- Scott Lang is a Sales Representative managed by Tony Starkgit 
+  ('Scott', 'Lang', 4, 1,); -- Scott Lang is a Sales Representative managed by Tony Stark

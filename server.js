@@ -345,4 +345,4 @@ function updateEmployeeRole() {
 }
 
 // Call the 'employeeTracker' function to start the application
-employeeTracker();
+employeeTracker(); 
