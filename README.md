@@ -49,8 +49,8 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ## Usage
 
-Usage is easy. Click the blue button to "Get Started"
-![demo-01.](screenshots/11-express-homework-demo-01.png)
+Run `node server` from the terminal, then use the arrows to select your choice. 
+![Screeshot of the menu](/images/menu.png)
 
 
 ## License
